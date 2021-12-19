@@ -1,10 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}The Great Django Blog{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="{% static 'js/main.js' %}"></script> <!-- This is how to include a static file -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />
+    <title>{% block title %}Admin Dashboard for Job Manager{% endblock %}</title>
 </head>
 <body>
-    
     {% include 'navbar.html' %}
 
     {% block content %}
@@ -12,7 +17,7 @@
     {% endblock %}
 
     {% block footer %}
-        This is footer
+        <p>fOOTER</p>
     {% endblock %}
 
 </body>
