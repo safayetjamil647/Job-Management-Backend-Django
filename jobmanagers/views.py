@@ -10,7 +10,16 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from jobmanagers.serializers import UserSerializer, GroupSerializer,CompanySerializers,JobSerializers,CategorySerializers,LocationSerializers,TechSerializers
 
+from django.shortcuts import render
+from django.views.generic import TemplateView # Import TemplateView
 
+# Add the two views we have been talking about  all this time :)
+class HomePageView(TemplateView):
+    template_name = "index.html"
+
+
+class AboutPageView(TemplateView):
+    template_name = "about.html"
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.

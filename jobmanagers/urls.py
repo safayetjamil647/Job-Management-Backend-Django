@@ -10,5 +10,5 @@ urlpatterns = [
     path('tech/',views.TechList.as_view()), 
     path('tech/<int:pk>/',views.TechDetail.as_view()),  
     path('location/<int:pk>/',views.LocationList.as_view()), 
-    path('location/',views.LocationDetail.as_view()),  
+    path('location/',views.LocationDetail.as_view()), 
 ]
