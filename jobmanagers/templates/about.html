@@ -1,13 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-  <p>
-  We are a group of Django enthusiasts with the following idiosyncrasies:
-
-  <ol>
-    <li>We only eat bananas on Saturdays.</li>
-    <li>We love making playing football on rainy days.</li>
-  </ol>
-  </p>
+<div id="main" class="page-content">
+  <p>This is an example content so we can see how this baby slides in</p>
   <a href="{% url 'home' %}">Go Home</a>
   <a href="{% url 'about' %}">About This Site</a>
+</div>
   {% endblock %}
