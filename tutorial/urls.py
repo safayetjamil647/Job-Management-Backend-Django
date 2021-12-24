@@ -19,11 +19,12 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 from jobmanagers import views
-
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
 # router.register(r'companys', views.CompanyViewSet)
 
 # Wire up our API using automatic URL routing.
@@ -34,5 +35,8 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('jobdata/', include('jobmanagers.urls')),
     path('',view=views.HomePageView.as_view(),name='home'),
-    path('about/',view=views.AboutPageView.as_view(),name='about') 
+    path('about/',view=views.AboutPageView.as_view(),name='about'),
+    path('api/user/', include('users.urls', namespace='users')),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
