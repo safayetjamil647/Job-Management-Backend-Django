@@ -1,8 +1,15 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}" type="text/css" />
 <header>
     <a onclick="myFunction()" id="menu-trigger">
         <span  class="menu-stripe stripe-top"></span>
     </a>
 </header>
 <div id="side" class="side-menu-container">
-    <p>welcome</p>
+    <div class="nav__block">
+        <a class="nav__link" href="{% url 'home' %}">Home</a>
+    </div>
+    <div>
+        <a class="nav__link" href="{% url 'home' %}">Home</a>
+    </div>
 </div>

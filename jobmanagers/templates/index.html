@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="main" class="page-content">
-  <p>This is an example content so we can see how this baby slides in</p>
-  <a href="{% url 'home' %}">Go Home</a>
-  <a href="{% url 'about' %}">About This Site</a>
+  {% include 'home/main.html' %}
 </div>
 
   {% endblock %}

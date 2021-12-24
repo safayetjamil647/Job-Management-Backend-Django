@@ -7,17 +7,13 @@
     
     <script src="{% static 'js/main.js' %}"></script> <!-- This is how to include a static file -->
     <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />
-    <title>{% block title %}Admin Dashboard for Job Manager{% endblock %}</title>
+    <title>Admin Dashboard {% block title %}{% endblock %}</title>
 </head>
 <body>
     {% include 'navbar.html' %}
 
     {% block content %}
 
-    {% endblock %}
-
-    {% block footer %}
-        <p>fOOTER</p>
     {% endblock %}
 
 </body>
